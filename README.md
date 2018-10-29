@@ -1,1 +1,1 @@
-# BBS vesison 1.0
+# BBS version 1.0
