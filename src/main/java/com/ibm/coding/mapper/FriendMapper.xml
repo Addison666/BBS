@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.ibm.coding.dao.FriendMapper">
+
+    <resultMap id="resultMap" type="com.ibm.coding.dto.FriendDto">
+        <result property="uid" column="uid"/>
+        <result property="fid" column="fid"/>
+        <result property="username" column="username"/>
+    </resultMap>
+
+    <select id="getFriend" resultMap="resultMap">
+        SELECT 	t.uid,t.fid,u.username
+        FROM t_friend_circle_list t
+        LEFT JOIN USER u ON u.id = t.fid
+        WHERE t.uid = #{uid}
+    </select>
+    <!--<insert id="createFriend" parameterType="com.ibm.coding.entity.Friend" useGeneratedKeys="true" keyProperty="id">-->
+        <!--INSERT INTO user(username,password)-->
+        <!--VALUES (#{username},#{password})-->
+    <!--</insert>-->
+</mapper>

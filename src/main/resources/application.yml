@@ -1,0 +1,9 @@
+server.port: 9999
+
+spring.datasource.driver-class-name: com.mysql.jdbc.Driver
+spring.datasource.url: jdbc:mysql://localhost:3306/bbs
+spring.datasource.name: test
+spring.datasource.username: root
+spring.datasource.password: root
+
+mybatis.mapper-locations: com/ibm/coding/mapper/*.xml
