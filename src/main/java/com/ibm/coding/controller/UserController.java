@@ -3,6 +3,7 @@ package com.ibm.coding.controller;
 import com.ibm.coding.service.UserService;
 import com.ibm.coding.util.JsonResponse;
 import com.ibm.coding.vo.LoginVo;
+import com.ibm.coding.vo.UserInfoVo;
 import com.ibm.coding.vo.UserVo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,4 +45,12 @@ public class UserController {
     }
 
 
+    @PostMapping("/v1/user/addInfo")
+    public JsonResponse<Object> addInfo(@RequestBody UserInfoVo infoVo) {
+        userService.addUserInfo(infoVo);
+        JsonResponse<Object> result = new JsonResponse<>();
+        result.setCode(200);
+        result.setMessage("保存成功");
+        return result;
+    }
 }

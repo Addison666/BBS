@@ -4,6 +4,7 @@ package com.ibm.coding.service;
 
 import com.ibm.coding.dto.UsersDto;
 import com.ibm.coding.vo.LoginVo;
+import com.ibm.coding.vo.UserInfoVo;
 import com.ibm.coding.vo.UserVo;
 
 
@@ -19,5 +20,5 @@ public interface UserService {
 
     void checkUser(UserVo userVo);
 
-
+    void addUserInfo(UserInfoVo infoVo);
 }

@@ -4,6 +4,8 @@ import com.ibm.coding.dto.UserDto;
 
 
 import com.ibm.coding.entity.User;
+import com.ibm.coding.entity.UserInfo;
+import com.ibm.coding.vo.UserInfoVo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -15,4 +17,8 @@ public interface UserMapper {
     UserDto getUser(@Param("username") String username);
 
     int createUser(User user);
+
+    int addUserInfo(UserInfo userInfo);
+
+    UserInfo getUserInfoByNickName(String nickName);
 }

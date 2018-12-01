@@ -42,3 +42,11 @@ CREATE TABLE `t_friend_circle_list` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table user_info(
+	id bigint(20) auto_increment primary key,
+	nick_name varchar(50) not null default "",
+	age int(5) null default null,
+	user_id bigint(20) not null,
+	create_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

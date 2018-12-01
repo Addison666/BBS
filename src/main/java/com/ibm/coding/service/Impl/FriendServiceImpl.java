@@ -17,7 +17,9 @@ import java.util.List;
 public class FriendServiceImpl implements FriendService {
     @Autowired
     FriendMapper friendMapper;
-
+    /**
+     *查看好友
+     */
     @Override
     public FriendsDto getFriend(Integer uid) {
         List<FriendDto> fri = friendMapper.getFriend(uid);

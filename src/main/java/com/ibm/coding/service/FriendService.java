@@ -11,4 +11,6 @@ import com.ibm.coding.dto.FriendsDto;
 public interface FriendService {
 
     FriendsDto getFriend(Integer uid);
+
+
 }

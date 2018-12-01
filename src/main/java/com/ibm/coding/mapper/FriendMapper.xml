@@ -10,7 +10,7 @@
     </resultMap>
 
     <select id="getFriend" resultMap="resultMap">
-        SELECT 	t.uid,t.fid,u.username
+        SELECT t.uid,t.fid,u.username
         FROM t_friend_circle_list t
         LEFT JOIN USER u ON u.id = t.fid
         WHERE t.uid = #{uid}

@@ -8,7 +8,13 @@
         <result property="username" column="username"/>
         <result property="password" column="password"/>
     </resultMap>
-
+    <resultMap id="baseMap" type="com.ibm.coding.entity.UserInfo">
+        <id property="id" column="id"/>
+        <result property="id" column="id"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="age" column="age"/>
+        <result property="userId" column="user_id"/>
+    </resultMap>
     <select id="getUser" resultMap="resultMap">
         SELECT id,username,password
         FROM user
@@ -18,4 +24,14 @@
         INSERT INTO user(username,password)
         VALUES (#{username},#{password})
     </insert>
+
+    <insert id="addUserInfo" parameterType="com.ibm.coding.entity.UserInfo" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user_info(nick_name,age,user_id)
+        VALUES (#{nickName},#{age},#{userId})
+    </insert>
+    <select id="getUserInfoByNickName" resultMap="baseMap">
+        SELECT id,nick_name,age,user_id
+        FROM user_info
+        WHERE nick_name = #{nickName}
+    </select>
 </mapper>
