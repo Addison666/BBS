@@ -50,3 +50,12 @@ create table user_info(
 	user_id bigint(20) not null,
 	create_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+create table user_nick_info (
+	id bigint(20) auto_increment primary key,
+	nick_name varchar(50) not null default "",
+	age int(3) null default null,
+	sex char(1) null default null,
+	picture_path varchar(200) null default "",
+	uid bigint(20) null default null,
+	create_time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

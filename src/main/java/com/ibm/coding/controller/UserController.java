@@ -1,5 +1,6 @@
 package com.ibm.coding.controller;
 
+import com.ibm.coding.dto.UserInfoDto;
 import com.ibm.coding.service.UserService;
 import com.ibm.coding.util.JsonResponse;
 import com.ibm.coding.vo.LoginVo;
@@ -51,6 +52,15 @@ public class UserController {
         JsonResponse<Object> result = new JsonResponse<>();
         result.setCode(200);
         result.setMessage("保存成功");
+        return result;
+    }
+    @GetMapping("/v1/user/search")
+    public JsonResponse<Object> search(@RequestParam Integer uid){
+
+        JsonResponse<Object> result = new JsonResponse<>();
+        result.setData(userService.search(uid));
+        result.setCode(200);
+        result.setMessage("查询成功");
         return result;
     }
 }

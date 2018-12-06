@@ -34,4 +34,9 @@
         FROM user_info
         WHERE nick_name = #{nickName}
     </select>
+    <select id="getUserInfoByUid" resultMap="baseMap">
+        SELECT id,nick_name,age,user_id
+        FROM user_info
+        WHERE user_id = #{uid}
+    </select>
 </mapper>

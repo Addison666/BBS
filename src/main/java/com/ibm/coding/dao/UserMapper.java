@@ -21,4 +21,6 @@ public interface UserMapper {
     int addUserInfo(UserInfo userInfo);
 
     UserInfo getUserInfoByNickName(String nickName);
+
+    UserInfo getUserInfoByUid(Integer uid);
 }

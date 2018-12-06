@@ -5,6 +5,7 @@ import com.ibm.coding.dao.UserMapper;
 import com.ibm.coding.dto.UserDto;
 
 
+import com.ibm.coding.dto.UserInfoDto;
 import com.ibm.coding.dto.UsersDto;
 import com.ibm.coding.entity.User;
 import com.ibm.coding.entity.UserInfo;
@@ -78,6 +79,16 @@ public class UserServiceImpl implements UserService {
         } else {
             throw new RunTimeException(2001, "昵称存在");
         }
+    }
+
+    @Override
+    public UserInfoDto search(Integer uid) {
+        UserInfo user = userMapper.getUserInfoByUid(uid);
+        UserInfoDto userInfoDto = new UserInfoDto();
+        userInfoDto.setUid(user.getUserId());
+        userInfoDto.setAge(user.getAge());
+        userInfoDto.setNickName(user.getNickName());
+        return userInfoDto;
     }
 
 

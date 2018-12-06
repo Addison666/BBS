@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.ibm.coding.dao.UserInfoMapper">
+
+    <resultMap id="baseMap" type="com.ibm.coding.entity.UserNickInfo">
+        <id property="id" column="id"/>
+        <result property="id" column="id"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="sex" column="sex"/>
+        <result property="picturePath" column="picture_path"/>
+        <result property="createTime" column="create_time"/>
+        <result property="uid" column="uid"/>
+    </resultMap>
+
+    <select id="getNickInfoByUid" resultMap="baseMap">
+        SELECT a.id,a.nick_name,a.age,a.uid,a.sex,b.create_time
+        FROM user_nick_info a
+        LEFT JOIN user b ON a.uid = b.id
+        WHERE a.uid = #{uid}
+    </select>
+</mapper>
